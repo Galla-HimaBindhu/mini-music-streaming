@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Mini Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2>Mini Music</h2>
+            <ul class="nav-links">
+                <li><a href="#" id="homeLink" class="active">Home</a></li>
+                <li><a href="#" id="songsLink">Songs</a></li>
+                <li><a href="playlist.html">My Playlists</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li id="adminLink" style="display: none;"><a href="admin.html">Admin</a></li>
+            </ul>
+            <div class="user-info">
+                <p id="userNameDisplay">User</p>
+                <a href="#" id="logoutBtn" style="color: var(--text-secondary); font-size: 0.9rem;">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Home Section -->
+            <div id="homeSection" class="welcome-hero">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Welcome to Bindhus Music</h1>
+                    <p class="welcome-subtitle">Immerse yourself in high-fidelity sound and discover the music you love.</p>
+                    <button class="btn btn-primary btn-large" onclick="document.getElementById('songsLink').click()">Explore Songs</button>
+                </div>
+            </div>
+
+            <!-- Songs Section -->
+            <div id="songsSection" style="display: none;">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search for songs or artists...">
+                </div>
+            
+            <div class="genre-stickers-container">
+                <div class="genre-sticker active" data-genre="all">All</div>
+                <div class="genre-sticker" data-genre="Feel Good">Feel Good</div>
+                <div class="genre-sticker" data-genre="Item Songs">Item Songs</div>
+                <div class="genre-sticker" data-genre="Melody Songs">Melody Songs</div>
+                <div class="genre-sticker" data-genre="Sad Songs">Sad Songs</div>
+                <div class="genre-sticker" data-genre="Romantic Songs">Romantic Songs</div>
+                <div class="genre-sticker" data-genre="Favourites">Favourites</div>
+            </div>
+            
+            <div id="dashboardFavoritesSection" style="display: none; margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">My Favorites <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-secondary); cursor: pointer; margin-left: 10px;" onclick="window.location.href='favorites.html'">View All</span></h3>
+                <div id="dashboardFavoritesGrid" class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
+                    <!-- Dashboard favorites will be injected here -->
+                </div>
+            </div>
+
+            <h3 id="mainSectionTitle" style="margin-bottom: 1rem;">Popular Songs</h3>
+            <div id="songsGrid" class="cards-grid">
+                <!-- Song cards will be injected here by JS -->
+            </div>
+            
+            </div> <!-- End Songs Section -->
+        </main>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <div class="now-playing">
+            <img id="playerCover" src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=150&q=80" alt="Cover" style="display: none;">
+            <div>
+                <div id="playerTitle" class="song-title">Select a song</div>
+                <div id="playerArtist" class="song-artist"></div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button class="control-btn" id="prevBtn">⏮</button>
+                <button class="control-btn play-pause-btn" id="playPauseBtn">▶</button>
+                <button class="control-btn" id="nextBtn">⏭</button>
+            </div>
+            <div class="progress-container">
+                <span id="currentTime">0:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <span id="durationTime">0:00</span>
+            </div>
+        </div>
+        <div class="volume-control">
+            <span style="margin-right: 0.5rem;">🔊</span>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" style="width: 100px;">
+        </div>
+    </div>
+    
+    <audio id="audioPlayer"></audio>
+
+    <script src="js/app.js"></script>
+    <script src="js/songs.js"></script>
+    <script>
+        // Tab switching logic for Home and Songs
+        const homeLink = document.getElementById('homeLink');
+        const songsLink = document.getElementById('songsLink');
+        const homeSection = document.getElementById('homeSection');
+        const songsSection = document.getElementById('songsSection');
+
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            homeSection.style.display = 'flex';
+            songsSection.style.display = 'none';
+            homeLink.classList.add('active');
+            songsLink.classList.remove('active');
+        });
+
+        songsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            homeSection.style.display = 'none';
+            songsSection.style.display = 'block';
+            songsLink.classList.add('active');
+            homeLink.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

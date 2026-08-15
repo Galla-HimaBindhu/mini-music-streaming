@@ -1,0 +1,17 @@
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\service\FavoriteService.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\controller\SongController.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\entity\Song.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\service\PlaylistService.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\controller\UserController.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\repository\SongRepository.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\service\UserService.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\entity\Favorite.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\repository\UserRepository.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\service\SongService.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\repository\PlaylistRepository.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\MusicAppApplication.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\repository\FavoriteRepository.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\controller\PlaylistController.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\controller\FavoriteController.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\entity\Playlist.java
+D:\BINDHU_files\Projects\Music streaming\mini-music-streaming\backend\src\main\java\com\musicapp\entity\User.java
