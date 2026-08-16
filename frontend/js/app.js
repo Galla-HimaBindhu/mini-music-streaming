@@ -1,6 +1,6 @@
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
     ? 'http://localhost:8080/api' 
-    : 'https://mini-music-streaming-backend.up.railway.app/api'; // Replace with actual deployed backend URL
+    : 'https://mini-music-streaming.onrender.com/api';
 
 // Check Authentication
 function checkAuth() {

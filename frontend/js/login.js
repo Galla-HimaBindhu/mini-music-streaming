@@ -1,6 +1,6 @@
 const LOGIN_API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
     ? 'http://localhost:8080/api/users' 
-    : 'https://mini-music-streaming-backend.up.railway.app/api/users'; // Update with your actual deployed backend URL
+    : 'https://mini-music-streaming.onrender.com/api/users';
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
