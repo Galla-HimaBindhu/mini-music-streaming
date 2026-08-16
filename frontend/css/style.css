@@ -615,3 +615,64 @@ th {
     color: #fff;
     border-color: var(--primary-color);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .sidebar h2 {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 0;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .nav-links li {
+        margin-bottom: 0;
+    }
+    .user-info {
+        display: none;
+    }
+    .music-player {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+    .now-playing, .player-controls {
+        width: 100%;
+        justify-content: center;
+    }
+    .now-playing {
+        margin-bottom: 5px;
+    }
+    .volume-control {
+        display: none;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .auth-buttons {
+        flex-direction: column;
+    }
+    .auth-buttons .btn {
+        margin: 5px 0;
+    }
+}
