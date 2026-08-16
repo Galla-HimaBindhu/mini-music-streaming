@@ -22,6 +22,11 @@ public class PlaylistController {
         return ResponseEntity.ok(playlistService.getUserPlaylists(userId));
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Playlist>> getAllPlaylists() {
+        return ResponseEntity.ok(playlistService.getAllPlaylists());
+    }
+
     @PostMapping
     public ResponseEntity<?> createPlaylist(@RequestBody Map<String, Object> payload) {
         try {

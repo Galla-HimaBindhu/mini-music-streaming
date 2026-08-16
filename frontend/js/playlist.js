@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadPlaylists() {
     try {
-        const res = await fetch(`${API_URL}/playlists/user/${currentUser.id}`);
+        const res = await fetch(`${API_URL}/playlists/all`);
         const playlists = await res.json();
         
         const container = document.getElementById('playlistsContainer');
         container.innerHTML = '';
 
         if (playlists.length === 0) {
-            container.innerHTML = '<p style="color: #aaa; text-align: center; margin-top: 2rem;">You have no playlists yet.</p>';
+            container.innerHTML = '<p style="color: #aaa; text-align: center; margin-top: 2rem;">No playlists exist yet.</p>';
             return;
         }
 
@@ -32,6 +32,10 @@ async function loadPlaylists() {
             item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.5)';
             
             // Header for Playlist
+            let deleteBtn = playlist.user && playlist.user.id === currentUser.id 
+                ? `<button onclick="deletePlaylist(${playlist.id})" class="btn btn-danger" style="padding: 10px 20px; border-radius: 20px; background: #e22134; border: none; font-weight: bold;">Delete Playlist</button>`
+                : `<span style="color: #888; font-style: italic; align-self: center;">Created by ${playlist.user ? playlist.user.name : 'Unknown'}</span>`;
+
             let headerHtml = `
                 <div style="display: flex; align-items: flex-end; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid #333; padding-bottom: 1.5rem;">
                     <div style="width: 150px; height: 150px; background: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
@@ -42,7 +46,7 @@ async function loadPlaylists() {
                         <h2 style="font-size: 3rem; margin: 0.5rem 0; color: #fff; font-weight: 800;">${playlist.name}</h2>
                         <p style="color: #aaa; font-size: 0.9rem;">${playlist.songs ? playlist.songs.length : 0} songs</p>
                     </div>
-                    <button onclick="deletePlaylist(${playlist.id})" class="btn btn-danger" style="padding: 10px 20px; border-radius: 20px; background: #e22134; border: none; font-weight: bold;">Delete Playlist</button>
+                    ${deleteBtn}
                 </div>
             `;
 
@@ -69,7 +73,7 @@ async function loadPlaylists() {
                             </div>
 
                             <div>
-                                <button onclick="event.stopPropagation(); removeSongFromPlaylist(${playlist.id}, ${song.id})" class="btn" style="background: transparent; color: #aaa; border: 1px solid #aaa; border-radius: 20px; padding: 5px 15px; font-size: 0.8rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#fff'; this.style.color='#fff';" onmouseout="this.style.borderColor='#aaa'; this.style.color='#aaa';">Remove</button>
+                                ${playlist.user && playlist.user.id === currentUser.id ? `<button onclick="event.stopPropagation(); removeSongFromPlaylist(${playlist.id}, ${song.id})" class="btn" style="background: transparent; color: #aaa; border: 1px solid #aaa; border-radius: 20px; padding: 5px 15px; font-size: 0.8rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#fff'; this.style.color='#fff';" onmouseout="this.style.borderColor='#aaa'; this.style.color='#aaa';">Remove</button>` : ''}
                             </div>
                         </div>
                     `;

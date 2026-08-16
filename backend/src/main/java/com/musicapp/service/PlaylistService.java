@@ -28,6 +28,10 @@ public class PlaylistService {
         return playlistRepository.findByUserId(userId);
     }
 
+    public List<Playlist> getAllPlaylists() {
+        return playlistRepository.findAll();
+    }
+
     public Playlist createPlaylist(Long userId, String name) {
         Optional<User> userOpt = userRepository.findById(userId);
         if (userOpt.isPresent()) {
