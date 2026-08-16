@@ -80,14 +80,14 @@ INSERT INTO playlist_songs (playlist_id, song_id) VALUES
 (2, 5),
 (2, 2);
 
--- 5. Insert Favorites (IDs 64 to 69 are the local favourites)
+-- 5. Insert Favorites (IDs 51 to 56 are the local favourites)
 INSERT INTO favorites (user_id, song_id) VALUES
-(2, 64),
-(2, 65),
-(2, 66),
-(2, 67),
-(2, 68),
-(2, 69);
+(2, 51),
+(2, 52),
+(2, 53),
+(2, 54),
+(2, 55),
+(2, 56);
 
 -- 6. Insert new Romantic Playlist Songs (Local Files)
 INSERT INTO songs (title, artist, album, genre, audio_url, cover_image) VALUES
@@ -101,11 +101,11 @@ INSERT INTO songs (title, artist, album, genre, audio_url, cover_image) VALUES
 INSERT INTO playlists (name, user_id) VALUES
 ('My Romantic Songs', 2);
 
--- 8. Add the new local songs (IDs 70, 71, 72, 73, 74) to the new playlist (ID 3)
+-- 8. Add the new local songs (IDs 57, 58, 59, 60, 61) to the new playlist (ID 3)
 INSERT INTO playlist_songs (playlist_id, song_id) VALUES
-(3, 70),
-(3, 71),
-(3, 72),
-(3, 73),
-(3, 74);
+(3, 57),
+(3, 58),
+(3, 59),
+(3, 60),
+(3, 61);
 
