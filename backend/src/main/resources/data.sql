@@ -80,32 +80,32 @@ INSERT INTO playlist_songs (playlist_id, song_id) VALUES
 (2, 5),
 (2, 2);
 
--- 5. Insert Favorites
+-- 5. Insert Favorites (IDs 64 to 69 are the local favourites)
 INSERT INTO favorites (user_id, song_id) VALUES
-(2, 1),
-(2, 3),
-(2, 4),
-(2, 51),
-(2, 52),
-(2, 53),
-(2, 54),
-(2, 55),
-(2, 56);
+(2, 64),
+(2, 65),
+(2, 66),
+(2, 67),
+(2, 68),
+(2, 69);
 
--- 6. Insert new Romantic Playlist Songs (Global Hits)
+-- 6. Insert new Romantic Playlist Songs (Local Files)
 INSERT INTO songs (title, artist, album, genre, audio_url, cover_image) VALUES
-('Perfect', 'Ed Sheeran', 'Divide', 'Romantic Songs', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3', 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=500&q=80'),
-('All of Me', 'John Legend', 'Love in the Future', 'Romantic Songs', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3', 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=500&q=80'),
-('A Thousand Years', 'Christina Perri', 'The Twilight Saga', 'Romantic Songs', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3', 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&q=80'),
-('Just the Way You Are', 'Bruno Mars', 'Doo-Wops & Hooligans', 'Romantic Songs', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3', 'https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=500&q=80');
+('Baby He Loves You', 'Unknown', 'Arya', 'Romantic Songs', 'audio/Playlist/romantic%20songs/3-Baby%20He%20Loves%20You-SenSongsMp3.Co.mp3', 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=500&q=80'),
+('Feel My Love', 'Unknown', 'Arya', 'Romantic Songs', 'audio/Playlist/romantic%20songs/Feel%20My%20Love-SenSongsMp3.Com.mp3', 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=500&q=80'),
+('Madhurame', 'Unknown', 'Unknown', 'Romantic Songs', 'audio/Playlist/romantic%20songs/Madhurame%20-%20SenSongsMp3.Co.mp3', 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&q=80'),
+('Meri Jaan', 'Unknown', 'Gangubai Kathiawadi', 'Romantic Songs', 'audio/Playlist/romantic%20songs/Meri%20Jaan%20Gangubai%20Kathiawadi%20128%20Kbps.mp3', 'https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=500&q=80'),
+('Zara Zara', 'Unknown', 'Rehnaa Hai Terre Dil Mein', 'Romantic Songs', 'audio/Playlist/romantic%20songs/Zara%20Zara%20Rehnaa%20Hai%20Terre%20Dil%20Mein%20128%20Kbps.mp3', 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=500&q=80');
 
 -- 7. Insert the new Playlist
 INSERT INTO playlists (name, user_id) VALUES
-('Romantic Vibes', 2);
+('My Romantic Songs', 2);
 
--- 8. Add the new songs (IDs 57, 58, 59, 60) to the new playlist (ID 3)
+-- 8. Add the new local songs (IDs 70, 71, 72, 73, 74) to the new playlist (ID 3)
 INSERT INTO playlist_songs (playlist_id, song_id) VALUES
-(3, 57),
-(3, 58),
-(3, 59),
-(3, 60);
+(3, 70),
+(3, 71),
+(3, 72),
+(3, 73),
+(3, 74);
+
